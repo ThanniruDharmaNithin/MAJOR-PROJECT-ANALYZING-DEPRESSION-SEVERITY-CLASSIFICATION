@@ -17,12 +17,9 @@
 
 ## 🎥 Project Execution Video
 
-<div align="center">
-  <video src="EXECUTION VIDEO MAJOR PROJECT.mp4" width="800" controls="controls">
-  </video>
-</div>
+[[PASTE THE GITHUB ASSET LINK HERE](https://github.com/user-attachments/assets/9e1594c1-08a1-4596-b00f-c94c36905d14)]
 
-*(If the video does not load automatically, [click here to view it](https://github.com/ThanniruDharmaNithin/Analyzing_Depression_Severity/blob/main/EXECUTION%20VIDEO%20MAJOR%20PROJECT.mp4))*
+
 
 ---
 
@@ -87,16 +84,16 @@ We combine **PHQ-9 scoring**, **CNN facial emotion recognition**, and **NLP sent
 4. **⚙️ Decision Fusion Algorithm:** Integrates outputs from all modules using a weighted scoring mechanism.
 5. **🤝 Recommendation Engine:** Generates personalized suggestions and connects users with support resources.
 
-### Workflow
+### 🔄 Workflow
 
-```text
-User Input → PHQ-9 / Facial Data / Text Input
-          ↓
-Feature Extraction (Scoring / CNN / NLP)
-          ↓
-Classification (Severity Level)
-          ↓
-Output: Depression Level + Recommendations
+```mermaid
+User Input → [ PHQ-9 | Facial Data | Text Input ]
+                      ↓
+Feature Extraction → [ Scoring | CNN | NLP ]
+                      ↓
+Classification → [ Severity Level Calculation ]
+                      ↓
+Output → [ Depression Level + Recommendations ]
 ```
 
 ---
