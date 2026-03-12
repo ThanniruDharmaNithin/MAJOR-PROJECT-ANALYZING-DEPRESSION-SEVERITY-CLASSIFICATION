@@ -15,6 +15,15 @@
 
 </div>
 
+## 🎥 Project Execution Video
+
+<div align="center">
+  <video src="EXECUTION VIDEO MAJOR PROJECT.mp4" width="800" controls="controls">
+  </video>
+</div>
+
+*(If the video does not load automatically, [click here to view it](https://github.com/ThanniruDharmaNithin/Analyzing_Depression_Severity/blob/main/EXECUTION%20VIDEO%20MAJOR%20PROJECT.mp4))*
+
 ---
 
 ## 📖 Abstract
@@ -89,6 +98,7 @@ Classification (Severity Level)
           ↓
 Output: Depression Level + Recommendations
 ```
+
 ---
 
 ## 💻 Tech Stack
