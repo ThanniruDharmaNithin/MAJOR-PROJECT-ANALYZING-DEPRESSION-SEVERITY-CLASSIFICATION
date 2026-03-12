@@ -17,7 +17,7 @@
 
 ## 🎥 Project Execution Video
 
-[[PASTE THE GITHUB ASSET LINK HERE](https://github.com/user-attachments/assets/9e1594c1-08a1-4596-b00f-c94c36905d14)]
+[[Click Here To Play : LINK HERE](https://github.com/user-attachments/assets/9e1594c1-08a1-4596-b00f-c94c36905d14)]
 
 
 
