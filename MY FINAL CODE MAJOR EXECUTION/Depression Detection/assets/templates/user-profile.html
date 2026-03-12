@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="text-center main-container ">
+    <form method='post' enctype='multipart/form-data' class="d-flex col-12 my-4" name='myForm'
+        onsubmit="return submitForm();" style="margin-left: 15rem;">
+        {% csrf_token %}
+        <div class="card image-container col-4  text-center mb-5"
+            style="box-shadow: 1px 0px 10px 0px rgba(175, 240, 231, 0.9);margin-top: 6.3rem; height:37.4rem;"><br>
+            <img src="/media/{{i.photo}}" class="m-auto"
+                style="border-radius: 50%; width:210px; height:210px; margin-bottom:2rem !important; margin-top:2.5rem !important;" />
+            <h5 style="font-size: 33px; font-family:'Courier New', Courier, monospace;">{{i.full_name}}</h5><br>
+            <div class="col-7 m-auto">
+                <label style="margin-left:-9rem; font-weight:470" class="mb-3">Upload Profle Pic: </label>
+                <input name='profilepic' type="file" class="form-control mb-2" /><br>
+            </div><br>
+        </div>
+        <div class="form-container col-5 mb-5" style="margin-top:100px;">
+            <div class="card" style="box-shadow: 1px 0px 10px 0px rgba(175, 240, 231, 0.9);">
+                <div class="row card-body">
+                    <h1 class="h1 mt-3 mb-4"
+                        style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">User Profile</h1>
+                    <div>
+                        <label class="d-flex text-left">User Name:</label>
+                        <input name='userName' class='form-control' type='text' value="{{i.full_name}}" /><br>
+                        <label class="d-flex text-left">Phone Number:</label>
+                        <input name='userPhNum' type='number' class="form-control" value="{{i.phone_number}}" /><br>
+                        <label class="d-flex text-left">Email:</label>
+                        <input name='userEmail' type='email' class="form-control" value="{{i.email}}" /><br>
+                        <label class="d-flex text-left">Password:</label>
+                        <input name='password' type='text' class="form-control" value="{{i.password}}" /><br>
+                        <label class="d-flex text-left">Age:</label>
+                        <input name='userAge' type='number' class="form-control" value="{{i.age}}" /><br>
+                        <label class="d-flex text-left">Address:</label>
+                        <input name='userAddress' type='text' class="form-control" value="{{i.address}}" /><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:48rem; margin-left:-35rem">
+            <button class="btn btn-primary d-flex m-auto">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

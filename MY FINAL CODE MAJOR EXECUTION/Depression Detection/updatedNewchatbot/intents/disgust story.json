@@ -1,0 +1,146 @@
+{
+  "id": "3232ee93-0b74-4759-9f0b-bede67e4789c",
+  "name": "disgust story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "text",
+                  "text": "Please select a story that matches your mood!"
+                },
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/3370/3370799.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "The Rotting Food",
+                      "value": "The Rotting Food",
+                      "type": "button",
+                      "name": "The Rotting Food",
+                      "link": "http://127.0.0.1:8000/story/the-rotting-food/"
+                    },
+                    {
+                      "text": "The Moldy House",
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-moldy-house/",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/8360/8360870.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Moldy House",
+                      "name": "The Moldy House"
+                    },
+                    {
+                      "value": "The Unwelcome Creature",
+                      "name": "The Unwelcome Creature",
+                      "text": "The Unwelcome Creature",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/11356/11356265.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "link": "http://127.0.0.1:8000/story/the-unwelcome-creature/"
+                    },
+                    {
+                      "value": "The Stinky Bathroom",
+                      "name": "The Stinky Bathroom",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/16779/16779548.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "type": "button",
+                      "text": "The Stinky Bathroom",
+                      "link": "http://127.0.0.1:8000/story/the-stinky-bathroom/"
+                    },
+                    {
+                      "value": "The Dirty Dishes",
+                      "text": "The Dirty Dishes",
+                      "link": "http://127.0.0.1:8000/story/the-dirty-dishes/",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/4072/4072073.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Dirty Dishes"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "value": "Choose Again",
+                      "text": "Choose Again",
+                      "name": "Choose Again",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

@@ -1,0 +1,140 @@
+{
+  "id": "00d342f0-6877-4493-aa48-3779a7f66656",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "rawUrl": "https://img.freepik.com/free-vector/virtual-influencer-abstract-concept-illustration-influencer-marketing-digital-agency-service-virtual-character-computer-generated-person-social-media-brand-avatar_335657-1080.jpg?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_tags_boosted",
+                  "type": "image",
+                  "accessibilityText": "StoryBuddy"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Hello! I’m your Story Guide. I’m here to share exciting tales with you!",
+            "Greetings! I’m your Storyteller. Ready to hear a captivating story?"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "type": "button",
+                      "value": "Predefined Story",
+                      "text": "Predefined Story",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14170/14170677.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "Predefined Story"
+                    },
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/6154/6154501.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "Emotion based story (Video)",
+                      "link": "http://127.0.0.1:8000/generate/story/",
+                      "type": "button",
+                      "value": "Emotion based story (Video)",
+                      "name": "Emotion based story (Video)"
+                    },
+                    {
+                      "text": "Voice based input (Audio)",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/16367/16367061.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "link": "http://127.0.0.1:8000/generate/story/audio/",
+                      "name": "Voice based input (Audio)",
+                      "value": "Voice based input (Audio)"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "value": "Choose Again",
+                      "type": "button",
+                      "name": "Choose Again",
+                      "text": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

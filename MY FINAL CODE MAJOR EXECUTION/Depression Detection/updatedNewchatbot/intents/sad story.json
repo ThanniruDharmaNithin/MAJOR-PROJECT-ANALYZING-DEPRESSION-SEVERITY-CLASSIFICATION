@@ -1,0 +1,136 @@
+{
+  "id": "ae8cdf39-6295-4c14-8f9a-45c15da8be27",
+  "name": "sad story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "text": "Please select your emotion so I can tell you a sad story based on it!",
+                  "type": "text"
+                },
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "name": "The Last Goodbye",
+                      "link": "http://127.0.0.1:8000/story/the-last-goodbye/",
+                      "text": "The Last Goodbye",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/3295/3295282.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Last Goodbye"
+                    },
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/8324/8324727.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "Loneliness in the Rain",
+                      "name": "Loneliness in the Rain",
+                      "type": "button",
+                      "value": "Loneliness in the Rain",
+                      "link": "http://127.0.0.1:8000/story/loneliness-in-the-rain/"
+                    },
+                    {
+                      "name": "The Broken Promise",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/11367/11367947.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Broken Promise",
+                      "link": "http://127.0.0.1:8000/story/the-broken-promise/",
+                      "type": "button",
+                      "text": "The Broken Promise"
+                    },
+                    {
+                      "name": "Empty Words",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/3391/3391055.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "Empty Words",
+                      "link": "http://127.0.0.1:8000/story/empty-words/",
+                      "text": "Empty Words",
+                      "type": "button"
+                    },
+                    {
+                      "link": "http://127.0.0.1:8000/story/a-farewell-too-soon/",
+                      "value": "A Farewell Too Soon",
+                      "text": "A Farewell Too Soon",
+                      "name": "A Farewell Too Soon",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/985/985606.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "name": "Choose Again",
+                      "value": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "type": "button",
+                      "text": "Choose Again"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

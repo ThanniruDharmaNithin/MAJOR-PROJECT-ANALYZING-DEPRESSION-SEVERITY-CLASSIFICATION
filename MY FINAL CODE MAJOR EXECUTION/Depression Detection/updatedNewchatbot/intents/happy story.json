@@ -1,0 +1,146 @@
+{
+  "id": "3701f923-70ca-4fe1-969b-fd96351cdc28",
+  "name": "happy story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select a Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "text": "Please select your emotion so I can tell you a story based on it!",
+                  "type": "text"
+                },
+                {
+                  "options": [
+                    {
+                      "text": "The Day at the Park",
+                      "name": "The Day at the Park",
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-day-at-the-park/",
+                      "value": "The Day at the Park",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://img.icons8.com/color/256/forest.png"
+                        }
+                      }
+                    },
+                    {
+                      "name": "Grandpa’s Surprise Garden",
+                      "text": "Grandpa’s Surprise Garden",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://img.icons8.com/color/256/garden.png"
+                        }
+                      },
+                      "link": "http://127.0.0.1:8000/story/grandpas-surprise-garden/",
+                      "value": "Grandpa’s Surprise Garden",
+                      "type": "button"
+                    },
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://img.icons8.com/color/256/snowflake.png"
+                        }
+                      },
+                      "name": "A Snowy Adventure",
+                      "text": "A Snowy Adventure",
+                      "type": "button",
+                      "value": "A Snowy Adventure",
+                      "link": "http://127.0.0.1:8000/story/a-snowy-adventure/"
+                    },
+                    {
+                      "type": "button",
+                      "value": "The Birthday Surprise",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://img.icons8.com/color/256/birthday-cake.png"
+                        }
+                      },
+                      "text": "The Birthday Surprise",
+                      "link": "http://127.0.0.1:8000/story/the-birthday-surprise/",
+                      "name": "The Birthday Surprise"
+                    },
+                    {
+                      "name": "A Kind Stranger",
+                      "type": "button",
+                      "text": "A Kind Stranger",
+                      "link": "http://127.0.0.1:8000/story/a-kind-stranger/",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://img.icons8.com/color/256/handshake.png"
+                        }
+                      },
+                      "value": "A Kind Stranger"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "text": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "type": "button",
+                      "value": "Choose Again",
+                      "name": "Choose Again"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

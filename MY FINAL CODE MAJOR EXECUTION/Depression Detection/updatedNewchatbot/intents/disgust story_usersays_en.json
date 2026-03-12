@@ -1,0 +1,28 @@
+[
+  {
+    "id": "681b8ab3-2f98-45ae-9044-2e5f28fc834b",
+    "data": [
+      {
+        "text": "disgust",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9d5418b1-64d2-492b-be8c-6677ecccc07a",
+    "data": [
+      {
+        "text": "disgust story",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

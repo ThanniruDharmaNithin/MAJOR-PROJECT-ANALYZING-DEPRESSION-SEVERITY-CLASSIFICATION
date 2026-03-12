@@ -1,0 +1,146 @@
+{
+  "id": "a209ae61-341f-4aea-b7ff-1a8a37c7547e",
+  "name": "neutral Story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "text": "Please select a story that matches your mood!",
+                  "type": "text"
+                },
+                {
+                  "options": [
+                    {
+                      "name": "The Long Wait",
+                      "link": "http://127.0.0.1:8000/story/the-long-wait/",
+                      "text": "The Long Wait",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/1370/1370200.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "type": "button",
+                      "value": "The Long Wait"
+                    },
+                    {
+                      "link": "http://127.0.0.1:8000/story/the-end-of-the-day/",
+                      "value": "The End of the Day",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/3634/3634809.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "The End of the Day",
+                      "type": "button",
+                      "name": "The End of the Day"
+                    },
+                    {
+                      "text": "The Empty Room",
+                      "link": "http://127.0.0.1:8000/story/the-empty-room/",
+                      "value": "The Empty Room",
+                      "name": "The Empty Room",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/16471/16471777.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "text": "The Waiting Train",
+                      "value": "The Waiting Train",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/12362/12362048.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "link": "http://127.0.0.1:8000/story/the-waiting-train/",
+                      "name": "The Waiting Train"
+                    },
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/10754/10754924.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Daily Routine",
+                      "value": "The Daily Routine",
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-daily-routine/",
+                      "text": "The Daily Routine"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "name": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "Choose Again",
+                      "type": "button",
+                      "text": "Choose Again"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

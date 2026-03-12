@@ -1,0 +1,146 @@
+{
+  "id": "41594305-cc55-4e8d-8c4e-73be9245156e",
+  "name": "suprise story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "text": "Please select your emotion so I can tell you a story based on it!",
+                  "type": "text"
+                },
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "text": "The Hidden Gift",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/9395/9395098.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Hidden Gift",
+                      "link": "http://127.0.0.1:8000/story/the-hidden-gift/",
+                      "value": "The Hidden Gift",
+                      "type": "button"
+                    },
+                    {
+                      "link": "http://127.0.0.1:8000/story/the-secret-party/",
+                      "type": "button",
+                      "text": "The Secret Party",
+                      "name": "The Secret Party",
+                      "value": "The Secret Party",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/6358/6358651.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    },
+                    {
+                      "name": "The Unexpected Visitor",
+                      "link": "http://127.0.0.1:8000/story/the-unexpected-visitor/",
+                      "type": "button",
+                      "value": "The Unexpected Visitor",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/4830/4830201.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "The Unexpected Visitor"
+                    },
+                    {
+                      "value": "The Unexpected Rescue",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/9255/9255204.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Unexpected Rescue",
+                      "type": "button",
+                      "text": "The Unexpected Rescue",
+                      "link": "http://127.0.0.1:8000/story/the-unexpected-rescue/"
+                    },
+                    {
+                      "name": "The Surprise Reunion",
+                      "link": "http://127.0.0.1:8000/story/the-surprise-reunion/",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/2332/2332327.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "The Surprise Reunion",
+                      "value": "The Surprise Reunion",
+                      "type": "button"
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "value": "Choose Again",
+                      "type": "button",
+                      "text": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "Choose Again"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

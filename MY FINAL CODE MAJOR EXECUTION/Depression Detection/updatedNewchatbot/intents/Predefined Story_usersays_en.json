@@ -1,0 +1,41 @@
+[
+  {
+    "id": "4e48ba7f-bf5e-4a28-afbe-bfa527c7bfec",
+    "data": [
+      {
+        "text": "old story",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "6c425833-bb18-4ae8-9c3d-ff99e6f40533",
+    "data": [
+      {
+        "text": "already existed stories",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "0c64db0b-a964-46f4-9877-b81ccc8a3b4c",
+    "data": [
+      {
+        "text": "Predefined Story",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

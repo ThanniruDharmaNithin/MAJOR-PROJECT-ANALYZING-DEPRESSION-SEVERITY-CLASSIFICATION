@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* Container Styling */
+    .generate-story-container {
+        background-color: #ffffff;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        margin: 0 auto;
+        text-align: center;
+        animation: fadeInEffect 1s ease-in-out;
+        max-width: 600px;
+    }
+    .generate-story-container h1 {
+        color: #333;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    /* Webcam / Video Recording Section Styling */
+    .webcam-section {
+        margin: 30px 0;
+        text-align: center;
+        border: 3px solid #ddd;
+        padding: 15px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f0f0f0, #e6e6e6);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    .webcam-video, .video-preview {
+        border-radius: 15px;
+        border: 4px solid #ccc;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: block;
+        margin: 0 auto;
+    }
+    .webcam-video, .video-preview {
+        width: 420px;
+        height: 340px;
+    }
+    /* Text Area Styling */
+    #user-text {
+        width: 420px;
+        margin: 20px auto;
+        padding: 10px;
+        font-size: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        display: block;
+        box-sizing: border-box;
+    }
+    /* Button Styling */
+    .generate-story-btns {
+        margin-top: 20px;
+    }
+    .record-btn, .submit-btn {
+        width: 220px;
+        padding: 15px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        color: white;
+        border: none;
+        transition: all 0.4s ease;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .record-btn {
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        box-shadow: 0 5px 15px rgba(0, 0, 255, 0.3);
+    }
+    .record-btn:hover {
+        background: linear-gradient(45deg, #0056b3, #004085);
+        box-shadow: 0 6px 18px rgba(0, 0, 255, 0.4);
+        transform: translateY(-3px);
+    }
+    .submit-btn {
+        background: linear-gradient(45deg, #28a745, #218838);
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+    .submit-btn:hover {
+        background: linear-gradient(45deg, #218838, #1e7e34);
+        box-shadow: 0 6px 18px rgba(40, 167, 69, 0.4);
+        transform: translateY(-3px);
+    }
+    /* Fade-in Effect */
+    @keyframes fadeInEffect {
+        0% { opacity: 0; transform: translateY(50px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    /* Results Styling */
+    .result {
+        margin-top: 30px;
+        padding: 20px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+    /* Back Link Styling */
+    .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+    }
+    .back-link:hover {
+        background: #0056b3;
+    }
+</style>
+
+<div class="generate-story-container">
+    {% if predicted_emotion %}
+        <!-- When result is available, hide the live elements and show result only -->
+        <div class="result">
+            <h2>Results</h2>
+            <p><strong>Predicted Emotion:</strong> {{ predicted_emotion }}</p>
+            <p><strong>Your Thoughts:</strong> {{ user_text }}</p>
+            <a href="{% url 'live_detection' %}" class="back-link">Try Again</a>
+        </div>
+    {% else %}
+        <h1>Record Your Live Mood &amp; Share Your Thoughts</h1>
+        <!-- Webcam / Video Recording Section -->
+        <div class="webcam-section">
+            <!-- Live video stream -->
+            <video id="webcam" class="webcam-video" autoplay></video>
+            <!-- Video preview after recording -->
+            <video id="video-preview" class="video-preview" controls style="display:none;"></video>
+        </div>
+        <!-- Form including textarea and hidden video input -->
+        <form id="video-form" method="POST" enctype="multipart/form-data" action="{% url 'live_detection' %}">
+            {% csrf_token %}
+            <!-- Text Input Field (inside the form) -->
+            <textarea id="user-text" name="user_text" rows="4" placeholder="Type your thoughts here..."></textarea>
+            <!-- Hidden field for video data -->
+            <input type="hidden" name="video_data" id="video-data">
+            <div class="generate-story-btns">
+                <!-- Record Button -->
+                <button id="record-btn" type="button" class="record-btn">Record Video</button>
+                <!-- Submit Button (shown after recording) -->
+                <button id="submit-btn" type="submit" class="submit-btn" style="display:none;">Submit</button>
+            </div>
+        </form>
+    {% endif %}
+</div>
+
+<script>
+    // Only run the recording script if the record button exists (i.e. no result shown)
+    if(document.getElementById('record-btn')){
+        const webcam = document.getElementById('webcam');
+        const videoPreview = document.getElementById('video-preview');
+        const recordBtn = document.getElementById('record-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const userText = document.getElementById('user-text');
+        const videoDataInput = document.getElementById('video-data');
+
+        // Request access to the webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                webcam.srcObject = stream;
+                webcam.play();
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+        let mediaRecorder;
+        let recordedChunks = [];
+
+        // When record button is clicked, start recording and allow text input
+        recordBtn.addEventListener('click', () => {
+            recordedChunks = [];
+            const stream = webcam.srcObject;
+            mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+
+            mediaRecorder.ondataavailable = event => {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };
+
+            mediaRecorder.onstop = () => {
+                // Create a blob from the recorded chunks
+                const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
+                // Create a URL for the recorded video and show preview
+                const videoURL = URL.createObjectURL(videoBlob);
+                videoPreview.src = videoURL;
+                videoPreview.style.display = 'block';
+                webcam.style.display = 'none';
+
+                // Convert video blob to a base64 string to send in the form
+                const reader = new FileReader();
+                reader.readAsDataURL(videoBlob);
+                reader.onloadend = () => {
+                    videoDataInput.value = reader.result;
+                };
+
+                // Make text area read-only so the user cannot modify it after recording
+                userText.readOnly = true;
+                // Reveal the Submit button
+                submitBtn.style.display = 'inline-block';
+            };
+
+            // Start recording and set a countdown for 10 seconds
+            mediaRecorder.start();
+            recordBtn.disabled = true;
+            let countdown = 10;
+            recordBtn.innerText = `Recording... ${countdown}`;
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                recordBtn.innerText = `Recording... ${countdown}`;
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                }
+            }, 1000);
+
+            // Stop recording after 10 seconds
+            setTimeout(() => {
+                mediaRecorder.stop();
+            }, 10000);
+        });
+
+        window.onload = () => {
+            recordBtn.style.display = 'inline-block';
+        };
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+{
+  "id": "26ec7cdc-cc25-4f31-b0bd-ec310b6b7c43",
+  "name": "Fear Story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "text",
+                  "text": "Please select a story that matches your mood!"
+                },
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-dark-cave/",
+                      "value": "The Dark Cave",
+                      "text": "The Dark Cave",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/3750/3750572.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Dark Cave"
+                    },
+                    {
+                      "value": "The Strange Noise",
+                      "name": "The Strange Noise",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/8298/8298362.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "link": "http://127.0.0.1:8000/story/the-strange-noise/",
+                      "text": "The Strange Noise",
+                      "type": "button"
+                    },
+                    {
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/5593/5593742.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Haunted House",
+                      "text": "The Haunted House",
+                      "link": "http://127.0.0.1:8000/story/the-haunted-house/",
+                      "value": "The Haunted House",
+                      "type": "button"
+                    },
+                    {
+                      "text": "The Unknown Forest",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14125/14125646.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Unknown Forest",
+                      "link": "http://127.0.0.1:8000/story/the-unknown-forest/",
+                      "name": "The Unknown Forest"
+                    },
+                    {
+                      "link": "http://127.0.0.1:8000/story/the-ghost-in-the-mirror/",
+                      "name": "The Ghost in the Mirror",
+                      "text": "The Ghost in the Mirror",
+                      "value": "The Ghost in the Mirror",
+                      "type": "button",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/11646/11646126.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "text": "Choose Again",
+                      "name": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "type": "button",
+                      "value": "Choose Again"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

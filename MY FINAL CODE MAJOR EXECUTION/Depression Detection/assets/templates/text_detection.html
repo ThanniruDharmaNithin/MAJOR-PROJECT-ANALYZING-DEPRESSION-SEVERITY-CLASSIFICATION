@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  /* Chat Container */
+  .chat-container {
+    margin: 20px auto;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  /* Chat Header */
+  .chat-header {
+    background: #007bff;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  /* Chat Messages */
+  .chat-messages {
+    flex: 1;
+    padding: 20px;
+    background: #f8f8f8;
+    overflow-y: auto;
+  }
+  /* Chat Input */
+  .chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+  }
+  .chat-input input[type="text"] {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+  .chat-input button {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  /* Message styling */
+  .message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    animation: fadeIn 0.5s ease-in;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .message.sent {
+    background: #dcf8c6;
+    margin-left: auto;
+    text-align: right;
+  }
+  .message.received {
+    background: #fff;
+    margin-right: auto;
+    text-align: left;
+  }
+  /* Message row styling */
+  .chat-message-row {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+  /* Avatar styling */
+  .message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 5px;
+  }
+</style>
+
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-6">
+      <img src="{% static '5img8.avif' %}" alt="Logo" class="logo-img me-2"> 
+    </div>
+    <div class="col-6">
+      <div class="chat-container">
+        <div class="chat-header">
+          <img src="{% static '5img1.png' %}" alt="Logo" class="logo-img me-2" style="width: 30px;">
+          Depression Detection Bot
+        </div>
+        <div id="chatMessages" class="chat-messages">
+          <!-- Sample conversation -->
+          <div class="chat-message-row">
+            <img src="{% static '5img1.png' %}" alt="User 1" class="message-avatar">
+            <div class="message received">Hello! How are you feeling today?</div>
+          </div>
+          <div class="chat-message-row">
+            <div class="message sent">Hi, this is how I’m feeling right now!</div>
+            <img src="{% static '5img9.png' %}" alt="User 2" class="message-avatar">
+          </div>
+        </div>
+        <div class="chat-input">
+          <input type="text" id="chatInput" placeholder="Type your message here..." autocomplete="off">
+          <button id="sendBtn">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Helper function to get the CSRF token from cookies
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  // Function to send a message to the backend
+  function sendMessage() {
+    var input = document.getElementById("chatInput");
+    var messageText = input.value.trim();
+    if (messageText === "") return;
+
+    var chatMessages = document.getElementById("chatMessages");
+
+    // Create new message row for the sent message (user)
+    var messageRow = document.createElement("div");
+    messageRow.className = "chat-message-row";
+
+    var messageBubble = document.createElement("div");
+    messageBubble.className = "message sent";
+    messageBubble.textContent = messageText;
+
+    // Add avatar for sent messages (user's avatar)
+    var avatar = document.createElement("img");
+    avatar.src = "{% static '5img9.png' %}";
+    avatar.alt = "User 2";
+    avatar.className = "message-avatar";
+
+    messageRow.appendChild(messageBubble);
+    messageRow.appendChild(avatar);
+    chatMessages.appendChild(messageRow);
+
+    // Clear input and scroll down
+    input.value = "";
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Create typing indicator dynamically below the user message
+    var typingIndicator = document.createElement("div");
+    typingIndicator.className = "chat-message-row";
+
+    var typingAvatar = document.createElement("img");
+    typingAvatar.src = "{% static '5img1.png' %}";
+    typingAvatar.alt = "User 1";
+    typingAvatar.className = "message-avatar";
+
+    var typingBubble = document.createElement("div");
+    typingBubble.className = "message received";
+    typingBubble.textContent = "Model is analysing text.......";
+
+    typingIndicator.appendChild(typingAvatar);
+    typingIndicator.appendChild(typingBubble);
+    chatMessages.appendChild(typingIndicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Create a 3-second delay promise
+    var delayPromise = new Promise(resolve => setTimeout(resolve, 3000));
+
+    // Send the user message to the backend using Fetch API
+    var fetchPromise = fetch("{% url 'text_detection' %}", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "X-CSRFToken": getCookie("csrftoken")
+      },
+      body: new URLSearchParams({
+        "message": messageText
+      })
+    }).then(response => response.json());
+
+    // Wait for both the delay and the fetch call to complete
+    Promise.all([delayPromise, fetchPromise])
+      .then(([_, data]) => {
+        // Remove the typing indicator
+        typingIndicator.remove();
+
+        // 1) Create a new message row for the TEXT response from the backend (bot)
+        var responseRow = document.createElement("div");
+        responseRow.className = "chat-message-row";
+
+        var responseAvatar = document.createElement("img");
+        responseAvatar.src = "{% static '5img1.png' %}";
+        responseAvatar.alt = "User 1";
+        responseAvatar.className = "message-avatar";
+
+        var responseBubble = document.createElement("div");
+        responseBubble.className = "message received";
+        responseBubble.textContent = data.response;
+
+        // If depression is detected, style the text bubble in red
+        if (data.response === "Depression Detected") {
+          responseBubble.style.backgroundColor = "#ffcccc"; // light red background
+          responseBubble.style.color = "red";
+        }
+
+        // Append the bot's text row
+        responseRow.appendChild(responseAvatar);
+        responseRow.appendChild(responseBubble);
+        chatMessages.appendChild(responseRow);
+
+        // 2) Create a separate row for the DETECTION ICON below the text
+        var iconRow = document.createElement("div");
+        iconRow.className = "chat-message-row";
+
+        var iconAvatar = document.createElement("img");
+        iconAvatar.src = "{% static '5img1.png' %}";
+        iconAvatar.alt = "User 1";
+        iconAvatar.className = "message-avatar";
+
+        var iconBubble = document.createElement("div");
+        iconBubble.className = "message received";
+
+        // Create the detection icon image
+        var detectionImg = document.createElement("img");
+        if (data.response === "Depression Detected") {
+          detectionImg.src = "{% static '8img1.avif' %}";
+          detectionImg.alt = "Depression Detected Icon";
+        } else {
+          detectionImg.src = "{% static '8img2.avif' %}";
+          detectionImg.alt = "No Depression Detected Icon";
+        }
+        detectionImg.style.width = "150px";
+        detectionImg.style.height = "100px";
+
+        iconBubble.appendChild(detectionImg);
+
+        // Append them to the second row
+        iconRow.appendChild(iconAvatar);
+        iconRow.appendChild(iconBubble);
+
+        chatMessages.appendChild(iconRow);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        typingIndicator.remove();
+      });
+  }
+
+  // Event listeners for sending messages
+  document.getElementById("sendBtn").addEventListener("click", sendMessage);
+  document.getElementById("chatInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+</script>
+
+{% endblock %}

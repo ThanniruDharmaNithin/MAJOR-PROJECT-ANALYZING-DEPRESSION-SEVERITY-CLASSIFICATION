@@ -1,0 +1,78 @@
+{
+  "id": "da0624d1-444f-4559-b013-1b8571ea38b1",
+  "name": "Choose Again",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "type": "chips",
+                  "options": [
+                    {
+                      "text": "Predefined Story",
+                      "type": "button",
+                      "name": "Predefined Story",
+                      "value": "Predefined Story",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14170/14170677.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    },
+                    {
+                      "text": "Generate Story (Video)",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/6154/6154501.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "Generate Story (Video)",
+                      "link": "http://127.0.0.1:8000/generate/story/",
+                      "type": "button",
+                      "name": "Generate Story (Video)"
+                    },
+                    {
+                      "link": "http://127.0.0.1:8000/generate/story/audio/",
+                      "text": "Generate Story (Audio)",
+                      "name": "Generate Story (Audio)",
+                      "type": "button",
+                      "value": "Generate Story (Audio)",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/16367/16367061.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

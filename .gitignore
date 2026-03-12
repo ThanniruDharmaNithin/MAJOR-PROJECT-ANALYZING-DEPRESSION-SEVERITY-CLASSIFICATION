@@ -1,0 +1,19 @@
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.pyd filter=lfs diff=lfs merge=lfs -text
+*.dll filter=lfs diff=lfs merge=lfs -text
+
+
+# Python virtual environments
+env/
+newenv/
+
+# Python cache files
+__pycache__/
+
+# Node modules (for React)
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db

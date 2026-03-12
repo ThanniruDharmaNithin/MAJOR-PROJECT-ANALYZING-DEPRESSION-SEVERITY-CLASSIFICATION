@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- About Section -->
+<section id="about" class="about section">
+
+  <div class="container">
+
+    <div class="row gy-4 gx-5">
+
+      <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static '5img4.jpg' %}" class="img-fluid" alt="Depression Detection AI">
+      </div>
+
+      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+        <h3>About Us</h3>
+       
+        <ul>
+          <li>
+            <i class="fa-solid fa-brain"></i>
+            <div>
+              <h5>Text-Based Depression Analysis</h5>
+              <p>Using Natural Language Processing (NLP), our AI scans written text to identify patterns of depressive speech, analyzing tone, sentiment, and word choice.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-video"></i>
+            <div>
+              <h5>Facial Expression Detection</h5>
+              <p>Our system examines live video to detect micro-expressions and facial cues associated with depressive states, providing real-time analysis of emotional well-being.</p>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-question-circle"></i>
+            <div>
+              <h5>AI-Powered Q&A Assessment</h5>
+              <p>By analyzing responses to clinically validated questions, our AI assesses behavioral and cognitive patterns that may indicate depression.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /About Section -->
+
+
+
+<!-- Stats Section -->
+<section id="stats" class="stats section light-background">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fa-solid fa-users"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Users Screened</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fa-solid fa-file-lines"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="3200" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Text Analyses Completed</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fas fa-video"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="2100" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Live Video Analyses</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="fas fa-question-circle"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="1500" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Q&A Assessments Taken</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+
+
+<!-- Services Section -->
+<section id="services" class="services section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <p>Leveraging AI to detect and analyze depression through text, video, and structured assessments.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Text-Based Depression Analysis</h3>
+          </a>
+          <p>Our AI analyzes written text to detect linguistic patterns linked to depression using Natural Language Processing (NLP).</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Live Video Facial Analysis</h3>
+          </a>
+          <p>Using facial recognition technology, we analyze micro-expressions and facial cues to identify possible signs of depression.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>AI-Powered Q&A Assessments</h3>
+          </a>
+          <p>Our system evaluates responses to scientifically backed depression assessment questionnaires for accurate mental health insights.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Progress Tracking & Reports</h3>
+          </a>
+          <p>Users receive reports on their mental health trends over time, helping them track emotional well-being and seek timely support.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Professional Support Recommendations</h3>
+          </a>
+          <p>Based on AI analysis, users receive recommendations to seek professional help when necessary, ensuring timely intervention.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Secure & Confidential Analysis</h3>
+          </a>
+          <p>All user data is encrypted and securely processed, ensuring privacy and confidentiality in mental health assessments.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+  
+{% endblock %}

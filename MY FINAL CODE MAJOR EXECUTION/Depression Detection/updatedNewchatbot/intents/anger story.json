@@ -1,0 +1,146 @@
+{
+  "id": "eb480444-9579-403d-bf3f-19cd6247add9",
+  "name": "anger story",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Select Story From Below"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "text": "Please select your emotion so I can tell you a story based on it!",
+                  "type": "text"
+                },
+                {
+                  "options": [
+                    {
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-unfair-game/",
+                      "text": "The Unfair Game",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/9214/9214118.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Unfair Game",
+                      "name": "The Unfair Game"
+                    },
+                    {
+                      "name": "The Broken Toy",
+                      "link": "http://127.0.0.1:8000/story/the-broken-toy/",
+                      "value": "The Broken Toy",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/17922/17922497.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "text": "The Broken Toy",
+                      "type": "button"
+                    },
+                    {
+                      "text": "The Missed Promotion",
+                      "type": "button",
+                      "link": "http://127.0.0.1:8000/story/the-missed-promotion/",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/2974/2974655.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Missed Promotion",
+                      "name": "The Missed Promotion"
+                    },
+                    {
+                      "value": "The Ruined Project",
+                      "link": "http://127.0.0.1:8000/story/the-ruined-project/",
+                      "type": "button",
+                      "text": "The Ruined Project",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/9146/9146270.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "name": "The Ruined Project"
+                    },
+                    {
+                      "type": "button",
+                      "text": "The Stolen Idea",
+                      "name": "The Stolen Idea",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/12773/12773425.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      },
+                      "value": "The Stolen Idea",
+                      "link": "http://127.0.0.1:8000/story/the-stolen-idea/"
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        },
+        {
+          "type": "4",
+          "title": "",
+          "payload": {
+            "richContent": [
+              [
+                {
+                  "options": [
+                    {
+                      "type": "button",
+                      "text": "Choose Again",
+                      "name": "Choose Again",
+                      "value": "Choose Again",
+                      "image": {
+                        "src": {
+                          "rawUrl": "https://cdn-icons-png.freepik.com/256/14025/14025449.png?ga\u003dGA1.1.2049666171.1733481391\u0026semt\u003dais_hybrid"
+                        }
+                      }
+                    }
+                  ],
+                  "type": "chips"
+                }
+              ]
+            ]
+          },
+          "textToSpeech": "",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}
