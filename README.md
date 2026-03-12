@@ -86,7 +86,7 @@ We combine **PHQ-9 scoring**, **CNN facial emotion recognition**, and **NLP sent
 
 ### 🔄 Workflow
 
-```mermaid
+```text
 User Input → [ PHQ-9 | Facial Data | Text Input ]
                       ↓
 Feature Extraction → [ Scoring | CNN | NLP ]
