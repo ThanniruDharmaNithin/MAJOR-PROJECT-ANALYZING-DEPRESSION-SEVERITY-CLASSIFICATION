@@ -78,18 +78,17 @@ We combine **PHQ-9 scoring**, **CNN facial emotion recognition**, and **NLP sent
 4. **⚙️ Decision Fusion Algorithm:** Integrates outputs from all modules using a weighted scoring mechanism.
 5. **🤝 Recommendation Engine:** Generates personalized suggestions and connects users with support resources.
 
-### 🔄 Workflow
+### Workflow
 
-```mermaid
-User Input → [ PHQ-9 | Facial Data | Text Input ]
-                      ↓
-Feature Extraction → [ Scoring | CNN | NLP ]
-                      ↓
-Classification → [ Severity Level Calculation ]
-                      ↓
-Output → [ Depression Level + Recommendations ]
+```text
+User Input → PHQ-9 / Facial Data / Text Input
+          ↓
+Feature Extraction (Scoring / CNN / NLP)
+          ↓
+Classification (Severity Level)
+          ↓
+Output: Depression Level + Recommendations
 ```
-
 ---
 
 ## 💻 Tech Stack
